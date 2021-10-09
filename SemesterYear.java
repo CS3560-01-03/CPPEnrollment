@@ -1,8 +1,8 @@
 public class SemesterYear {
 	
-	public Course[] coursesCart;
-	public Course[] enrolledCourses;
-	public String enrollmentDate;
+	private Course[] coursesCart;
+	private Course[] enrolledCourses;
+	private String enrollmentDate;
 	
 	public String getEnrollmentDate() {
 		return enrollmentDate;
