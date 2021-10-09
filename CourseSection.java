@@ -1,18 +1,17 @@
-public class courseSection extends Course {
+public class CourseSection extends Course {
 	
 	public int sectionNumber;
-	public int startTime;
-	public int roomNumber;
-	public boolean waitlist;
+	public int sectionStartTime;
+	public int sectionRoomNumber;
+	public boolean sectionWaitlist;
 	public int sectionCapacity;
-	public String professorName;
+	public String sectionProfessor;
 	
-	public void createCourseSection(String sectionNumber) {
-		// fill later
+	public CourseSection createCourseSection(int sectionNumber, String sectionProfessor, in sectionRoomNumber,
+						  int sectionCapacity, int sectionStartTime) {
 	}
 	
 	public void deleteCourseSection() {
-		// fill later
 	}
 	
 	public int getSectionNumber() {
@@ -21,23 +20,23 @@ public class courseSection extends Course {
 	public void setSectionNumber(int sectionNumber) {
 		this.sectionNumber = sectionNumber;
 	}
-	public int getStartTime() {
-		return startTime;
+	public int getSectionStartTime() {
+		return sectionStartTime;
 	}
-	public void setStartTime(int startTime) {
-		this.startTime = startTime;
+	public void setSectionStartTime(int sectionStartTime) {
+		this.sectionStartTime = sectionStartTime;
 	}
-	public int getRoomNumber() {
-		return roomNumber;
+	public int getSectionRoomNumber() {
+		return sectionRoomNumber;
 	}
-	public void setRoomNumber(int roomNumber) {
-		this.roomNumber = roomNumber;
+	public void setSectionRoomNumber(int sectionRoomNumber) {
+		this.sectionRoomNumber = sectionRoomNumber;
 	}
-	public boolean isWaitlist() {
-		return waitlist;
+	public boolean isSectionWaitlist() {
+		return sectionWaitlist;
 	}
-	public void setWaitlist(boolean waitlist) {
-		this.waitlist = waitlist;
+	public void setSectionWaitlist(boolean sectionWaitlist) {
+		this.sectionWaitlist = sectionWaitlist;
 	}
 	public int getSectionCapacity() {
 		return sectionCapacity;
@@ -45,11 +44,12 @@ public class courseSection extends Course {
 	public void setSectionCapacity(int sectionCapacity) {
 		this.sectionCapacity = sectionCapacity;
 	}
-	public String getProfessorName() {
-		return professorName;
+	public String getSectionProfessor() {
+		return sectionProfessor;
 	}
-	public void setProfessorName(String professorName) {
-		this.professorName = professorName;
+	public void setSectionProfessor(String sectionProfessor) {
+		this.sectionProfessor = sectionProfessor;
 	}
+	
 }
 
