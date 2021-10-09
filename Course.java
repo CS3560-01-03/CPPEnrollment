@@ -6,7 +6,8 @@ public class Course {
 	public String coursePrerequisites;
 	public int courseCredit;
 	
-	public void createCourse(String courseCode) {
+	public void createCourse(String courseCode, String courseSubject, String courseTitle, 
+				 String courseDescription, String cousePrerequistes) {
 		
 	}
 	
