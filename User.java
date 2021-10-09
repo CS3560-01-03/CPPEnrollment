@@ -1,7 +1,7 @@
 public class User {
-	public String name;
-	public String address;
-	public String dateOfBirth;
+	private String name;
+	private String address;
+	private String dateOfBirth;
 	
 	public String getName() {
 		return name;
