@@ -14,6 +14,11 @@ public class Course {
 		
 	}
 	
+	public Course searchCourse(String keyword) {
+		return null;
+		
+	}
+	
 	public String getCourseSubject() {
 		return courseSubject;
 	}
