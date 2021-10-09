@@ -1,5 +1,5 @@
 public class Admin extends User{
-	public int adminID;
+	private int adminID;
 	
 	public Admin createAdmin(int studentID) {
 		return null;
