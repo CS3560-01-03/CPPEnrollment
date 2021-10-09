@@ -1,11 +1,11 @@
 public class CourseSection extends Course {
 	
-	public int sectionNumber;
-	public int sectionStartTime;
-	public int sectionRoomNumber;
-	public boolean sectionWaitlist;
-	public int sectionCapacity;
-	public String sectionProfessor;
+	private int sectionNumber;
+	private int sectionStartTime;
+	private int sectionRoomNumber;
+	private boolean sectionWaitlist;
+	private int sectionCapacity;
+	private String sectionProfessor;
 	
 	public CourseSection createCourseSection(int sectionNumber, String sectionProfessor, in sectionRoomNumber,
 						  int sectionCapacity, int sectionStartTime) {
