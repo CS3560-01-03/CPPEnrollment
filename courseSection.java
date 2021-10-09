@@ -1,16 +1,24 @@
 public class courseSection {
 	
-	public String sectionNumber;
+	public int sectionNumber;
 	public int startTime;
 	public int roomNumber;
 	public boolean waitlist;
 	public int sectionCapacity;
 	public String professorName;
 	
-	public String getSectionNumber() {
+	public void createCourseSection(String sectionNumber) {
+		// fill later
+	}
+	
+	public void deleteCourseSection() {
+		// fill later
+	}
+	
+	public int getSectionNumber() {
 		return sectionNumber;
 	}
-	public void setSectionNumber(String sectionNumber) {
+	public void setSectionNumber(int sectionNumber) {
 		this.sectionNumber = sectionNumber;
 	}
 	public int getStartTime() {
@@ -44,3 +52,4 @@ public class courseSection {
 		this.professorName = professorName;
 	}
 }
+
