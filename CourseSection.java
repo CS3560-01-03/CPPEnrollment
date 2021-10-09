@@ -1,4 +1,4 @@
-public class courseSection {
+public class courseSection extends Course {
 	
 	public int sectionNumber;
 	public int startTime;
