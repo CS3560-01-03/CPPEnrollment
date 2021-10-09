@@ -6,6 +6,14 @@ public class Course {
 	public String coursePrerequisites;
 	public int courseCredit;
 	
+	public void createCourse(String courseCode) {
+		
+	}
+	
+	public void deleteCourse() {
+		
+	}
+	
 	public String getCourseSubject() {
 		return courseSubject;
 	}
