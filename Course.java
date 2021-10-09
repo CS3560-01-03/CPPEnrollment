@@ -1,10 +1,10 @@
 public class Course {
-	public String courseSubject;
-	public String courseCode;
-	public String courseTitle;
-	public String courseDescription;
-	public String coursePrerequisites;
-	public int courseCredit;
+	private String courseSubject;
+	private String courseCode;
+	private String courseTitle;
+	private String courseDescription;
+	private String coursePrerequisites;
+	private int courseCredit;
 	
 	public void createCourse(String courseCode, String courseSubject, String courseTitle, 
 				 String courseDescription, String cousePrerequistes) {
