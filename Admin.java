@@ -1,19 +1,19 @@
-public class Admin extends User{
+public class Admin extends User{ 					// subclass of User
 	private int adminID;
 	
-	public Admin createAdmin(int ID) {
+	public Admin createAdmin(int ID) {				// create new Admin acc
 		return null;
 	}
 	
-	public void removeAdmin() {
+	public void removeAdmin(int ID) {					// remove admin
 		
 	}
 
-	public int getAdminID() {
+	public int getAdminID() {					// AdminID getter
 		return adminID;
 	}
 
-	public void setAdminID(int adminID) {
+	public void setAdminID(int adminID) {				// AdminID setter
 		this.adminID = adminID;
 	}
 
