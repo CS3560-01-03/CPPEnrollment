@@ -2,7 +2,7 @@
 public class Student extends User {
 	public int studentID;
 	public String studentMajor;
-	public Course courseCompleted;
+	public Course[] courseCompleted;
 	
 	public Student createStudent(int studentID) {
 		return null;
