@@ -1,5 +1,7 @@
 public class Course {
-	private String courseSubject;
+	//Example : [CS][3560] [Obj-Oriented Design and Prog]
+	//      [Subject][Code] [Title]
+	private String courseSubject; 
 	private String courseCode;
 	private String courseTitle;
 	private String courseDescription;
