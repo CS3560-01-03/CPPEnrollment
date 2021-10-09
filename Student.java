@@ -1,8 +1,8 @@
 
 public class Student extends User {
-	public int studentID;
-	public String studentMajor;
-	public Course[] courseCompleted;
+	private int studentID;
+	private String studentMajor;
+	private Course[] courseCompleted;
 	
 	public Student createStudent(int studentID) {
 		return null;
