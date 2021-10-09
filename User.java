@@ -1,7 +1,9 @@
+import java.time.LocalDate;
+
 public class User {
 	private String name;
 	private String address;
-	private String dateOfBirth;
+	private LocalDate dateOfBirth;
 	
 	public String getName() {
 		return name;
@@ -18,7 +20,7 @@ public class User {
 	public String getDateOfBirth() {
 		return dateOfBirth;
 	}
-	public void setDateOfBirth(String dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
+	public void setDateOfBirth(int year, int month, int day) {
+		this.dateOfBirth = LocalDate.of(year, month, day);
 	}
 }
