@@ -438,11 +438,11 @@ public class StudentRegistration extends Application {
         Button selectButton = new Button("Select");
         
         HBox button4 = new HBox(selectButton);
-        button4.setLayoutX(400.0);
-        button4.setLayoutY(400.0);
+        button4.setLayoutX(1000.0);
+        button4.setLayoutY(700.0);
 
         Pane mousevisible4 = new Pane(menuHBox4,loginHbox4); 
-        Pane rootPane4 = new Pane(mouseinvisible4, mousevisible4, rect10, rect11, searchTitle, rect12, selectButton);
+        Pane rootPane4 = new Pane(mouseinvisible4, mousevisible4, rect10, rect11, searchTitle, rect12, button4);
         Scene scene4 = new Scene(rootPane4, 1200, 800, Color.WHITESMOKE);
         
         studentInfo.setOnMouseClicked(event -> {
