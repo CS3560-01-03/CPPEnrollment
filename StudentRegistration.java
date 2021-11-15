@@ -18,11 +18,13 @@ public class StudentRegistration extends Application {
         topBar.setFill(Color.web("#0F4D92"));
         topBar.setMouseTransparent(true);
         
+        //Student Info text
         Text studentInfo = new Text("Student Info");
         studentInfo.setFont(new Font("Times New Roman",27));
         studentInfo.setStyle("-fx-font-weight:bold");
         studentInfo.setFill(Color.CYAN);
         
+        //change color if mouse hovers over
         studentInfo.setOnMouseEntered(event -> {
             studentInfo.setFill(Color.WHITESMOKE);
         });
@@ -30,11 +32,13 @@ public class StudentRegistration extends Application {
             studentInfo.setFill(Color.CYAN);
         });
         
+        //Enrolled Courses text
         Text enrolledCourse = new Text("Enrolled Courses");
         enrolledCourse.setFont(new Font("Times New Roman",27));
         enrolledCourse.setStyle("-fx-font-weight:bold");
         enrolledCourse.setFill(Color.WHITESMOKE);
         
+        //change color if mouse hovers over
         enrolledCourse.setOnMouseEntered(event -> {
             enrolledCourse.setFill(Color.CYAN);
         });
@@ -42,11 +46,13 @@ public class StudentRegistration extends Application {
             enrolledCourse.setFill(Color.WHITESMOKE);
         });
         
+        //Selected Courses text
         Text selectedCourse = new Text("Selected Courses");
         selectedCourse.setFont(new Font("Times New Roman",27));
         selectedCourse.setStyle("-fx-font-weight:bold");
         selectedCourse.setFill(Color.WHITESMOKE);
         
+        //change color if mouse hovers over
         selectedCourse.setOnMouseEntered(event -> {
             selectedCourse.setFill(Color.CYAN);
         });
@@ -54,11 +60,13 @@ public class StudentRegistration extends Application {
             selectedCourse.setFill(Color.WHITESMOKE);
         });
         
+        //Search Courses text
         Text searchCourse = new Text("Search Courses");
         searchCourse.setFont(new Font("Times New Roman",27));
         searchCourse.setStyle("-fx-font-weight:bold");
         searchCourse.setFill(Color.WHITESMOKE);
         
+        //change color if mouse hovers over
         searchCourse.setOnMouseEntered(event -> {
             searchCourse.setFill(Color.CYAN);
         });
@@ -66,29 +74,32 @@ public class StudentRegistration extends Application {
             searchCourse.setFill(Color.WHITESMOKE);
         });
         
-        
+        //HBox to hold all menu texts
         HBox menuHBox = new HBox(100, studentInfo, enrolledCourse, selectedCourse, searchCourse);
         menuHBox.setLayoutX(100);
         menuHBox.setLayoutY(102);
         
-        
+        //Enrollment Subsystem text
         Text title = new Text("Enrollment Subsystem");
         title.setFont(new Font("Times New Roman",48));
         title.setStyle("-fx-font-weight:regular");
         title.setFill(Color.WHITESMOKE);
         
-        
+        //Logout text
         Text logout = new Text("Logout");
         logout.setFont(new Font("Times New Roman",18));
         logout.setStyle("-fx-font-weight:regular");
         logout.setFill(Color.WHITESMOKE);
+        
+        //change color if mouse hovers over
         logout.setOnMouseEntered(event -> {
             logout.setFill(Color.CYAN);
         });
         logout.setOnMouseExited(event -> {
             logout.setFill(Color.WHITESMOKE);
         });
-       
+        
+        //Text in topBox
         HBox loginHbox = new HBox(675, title, logout);
         loginHbox.setLayoutX(25);
         loginHbox.setLayoutY(10.0);
@@ -96,6 +107,7 @@ public class StudentRegistration extends Application {
         Pane mouseinvisible = new Pane(topBar); 
         mouseinvisible.setMouseTransparent(true);
         
+        //Background squares
         Rectangle rect = new Rectangle(50, 200, 1100, 570);
         rect.setFill(Color.web("#0F4D92")); 
         
@@ -105,6 +117,7 @@ public class StudentRegistration extends Application {
         Rectangle rect3 = new Rectangle(70, 625, 1060, 125);
         rect3.setFill(Color.WHITE);
         
+        //Student info texts
         Text studentTitle = new Text(75, 250, "Student Info");
         studentTitle.setFont(new Font("Times New Roman",32));
         studentTitle.setStyle("-fx-font-weight:bold");
@@ -129,17 +142,20 @@ public class StudentRegistration extends Application {
         Pane rootPane = new Pane(mouseinvisible, mousevisible, rect, rect2, studentTitle, studentID, studentName, studentMajor, rect3);
         Scene scene = new Scene(rootPane, 1200, 800,Color.WHITESMOKE);
 
-        // SCENE 2
+        // SCENE 2 = Selected Courses Page
         
+        //Top blue bar
         Rectangle topBar2 = new Rectangle(0,0,1200,140);
         topBar2.setFill(Color.web("#0F4D92"));
         topBar2.setMouseTransparent(true);
         
+        //Student info text
         Text studentInfo2 = new Text("Student Info");
         studentInfo2.setFont(new Font("Times New Roman",27));
         studentInfo2.setStyle("-fx-font-weight:bold");
         studentInfo2.setFill(Color.WHITESMOKE);
         
+        //change color if mouse hovers over
         studentInfo2.setOnMouseEntered(event -> {
             studentInfo2.setFill(Color.CYAN);
         });
@@ -147,11 +163,13 @@ public class StudentRegistration extends Application {
             studentInfo2.setFill(Color.WHITESMOKE);
         });
         
+        //Enrolled courses text
         Text enrolledCourse2 = new Text("Enrolled Courses");
         enrolledCourse2.setFont(new Font("Times New Roman",27));
         enrolledCourse2.setStyle("-fx-font-weight:bold");
         enrolledCourse2.setFill(Color.CYAN);
         
+        //change color if mouse hovers over
         enrolledCourse2.setOnMouseEntered(event -> {
             enrolledCourse2.setFill(Color.WHITESMOKE);
         });
@@ -159,11 +177,13 @@ public class StudentRegistration extends Application {
             enrolledCourse2.setFill(Color.CYAN);
         });
         
+        //Selected Course text
         Text selectedCourse2 = new Text("Selected Courses");
         selectedCourse2.setFont(new Font("Times New Roman",27));
         selectedCourse2.setStyle("-fx-font-weight:bold");
         selectedCourse2.setFill(Color.WHITESMOKE);
         
+        //change color if mouse hovers over
         selectedCourse2.setOnMouseEntered(event -> {
             selectedCourse2.setFill(Color.CYAN);
         });
@@ -171,11 +191,13 @@ public class StudentRegistration extends Application {
             selectedCourse2.setFill(Color.WHITESMOKE);
         });
         
+        //Search courses text
         Text searchCourse2 = new Text("Search Courses");
         searchCourse2.setFont(new Font("Times New Roman",27));
         searchCourse2.setStyle("-fx-font-weight:bold");
         searchCourse2.setFill(Color.WHITESMOKE);
         
+        //change color if mouse hovers over
         searchCourse2.setOnMouseEntered(event -> {
             searchCourse2.setFill(Color.CYAN);
         });
@@ -183,19 +205,24 @@ public class StudentRegistration extends Application {
             searchCourse2.setFill(Color.WHITESMOKE);
         });
         
+        //HBox for menu texts
         HBox menuHBox2 = new HBox(100, studentInfo2, enrolledCourse2, selectedCourse2, searchCourse2);
         menuHBox2.setLayoutX(100);
         menuHBox2.setLayoutY(102);
         
+        //Enrollment Subsystem text
         Text title2 = new Text("Enrollment Subsystem");
         title2.setFont(new Font("Times New Roman",48));
         title2.setStyle("-fx-font-weight:regular");
         title2.setFill(Color.WHITESMOKE);
         
+        //Logout text
         Text logout2 = new Text("Logout");
         logout2.setFont(new Font("Times New Roman",18));
         logout2.setStyle("-fx-font-weight:regular");
         logout2.setFill(Color.WHITESMOKE);
+        
+        //change color if mouse hovers over
         logout2.setOnMouseEntered(event -> {
             logout2.setFill(Color.CYAN);
         });
@@ -210,6 +237,7 @@ public class StudentRegistration extends Application {
         Pane mouseinvisible2 = new Pane(topBar2); 
         mouseinvisible2.setMouseTransparent(true);
         
+        //Background rectangles
         Rectangle rect4 = new Rectangle(50, 200, 1100, 570);
         rect4.setFill(Color.web("#0F4D92")); 
         
@@ -224,6 +252,7 @@ public class StudentRegistration extends Application {
         enrolledTitle.setStyle("-fx-font-weight:bold");
         enrolledTitle.setFill(Color.BLACK);
         
+        //Drop and swap buttons
         Button dropButton = new Button("DROP");
         Button swapButton = new Button("SWAP");
         
@@ -235,7 +264,7 @@ public class StudentRegistration extends Application {
         Pane rootPane2 = new Pane(mouseinvisible2,mousevisible2, rect4, rect5, enrolledTitle, rect6, button2);
         scene2 = new Scene(rootPane2, 1200, 800,Color.WHITESMOKE);
         
-        // SCENE 3
+        // SCENE 3 = Enrolled Courses page
         Rectangle topBar3 = new Rectangle(0,0,1200,140);
         topBar3.setFill(Color.web("#0F4D92"));
         topBar3.setMouseTransparent(true);
@@ -341,16 +370,18 @@ public class StudentRegistration extends Application {
         Scene scene3 = new Scene(rootPane3, 1200, 800,Color.WHITESMOKE);
  
         
-        // SCENE 4
+        // SCENE 4 = Search Course page
         Rectangle topBar4 = new Rectangle(0,0,1200,140);
         topBar4.setFill(Color.web("#0F4D92"));
         topBar4.setMouseTransparent(true);
         
+        //Student info text
         Text studentInfo4 = new Text("Student Info");
         studentInfo4.setFont(new Font("Times New Roman",27));
         studentInfo4.setStyle("-fx-font-weight:bold");
         studentInfo4.setFill(Color.WHITESMOKE);
         
+        //change color if mouse hovers over
         studentInfo4.setOnMouseEntered(event -> {
             studentInfo4.setFill(Color.CYAN);
         });
@@ -358,11 +389,13 @@ public class StudentRegistration extends Application {
             studentInfo4.setFill(Color.WHITESMOKE);
         });
         
+        //Enrolled Courses text
         Text enrolledCourse4 = new Text("Enrolled Courses");
         enrolledCourse4.setFont(new Font("Times New Roman",27));
         enrolledCourse4.setStyle("-fx-font-weight:bold");
         enrolledCourse4.setFill(Color.WHITESMOKE);
         
+        //change color if mouse hovers over
         enrolledCourse4.setOnMouseEntered(event -> {
             enrolledCourse4.setFill(Color.CYAN);
         });
@@ -370,11 +403,13 @@ public class StudentRegistration extends Application {
             enrolledCourse4.setFill(Color.WHITESMOKE);
         });
         
+        //Selected Courses text
         Text selectedCourse4 = new Text("Selected Courses");
         selectedCourse4.setFont(new Font("Times New Roman",27));
         selectedCourse4.setStyle("-fx-font-weight:bold");
         selectedCourse4.setFill(Color.WHITESMOKE);
         
+        //change color if mouse hovers over
         selectedCourse4.setOnMouseEntered(event -> {
             selectedCourse4.setFill(Color.CYAN);
         });
@@ -382,11 +417,13 @@ public class StudentRegistration extends Application {
             selectedCourse4.setFill(Color.WHITESMOKE);
         });
         
+        //Search courses text
         Text searchCourse4 = new Text("Search Courses");
         searchCourse4.setFont(new Font("Times New Roman",27));
         searchCourse4.setStyle("-fx-font-weight:bold");
         searchCourse4.setFill(Color.CYAN);
         
+        //change color if mouse hovers over
         searchCourse4.setOnMouseEntered(event -> {
             searchCourse4.setFill(Color.WHITESMOKE);
         });
@@ -394,6 +431,7 @@ public class StudentRegistration extends Application {
             searchCourse4.setFill(Color.CYAN);
         });
         
+        //Menu text HBox
         HBox menuHBox4 = new HBox(100, studentInfo4, enrolledCourse4, selectedCourse4, searchCourse4);
         menuHBox4.setLayoutX(100);
         menuHBox4.setLayoutY(102);
@@ -407,6 +445,8 @@ public class StudentRegistration extends Application {
         logout4.setFont(new Font("Times New Roman",18));
         logout4.setStyle("-fx-font-weight:regular");
         logout4.setFill(Color.WHITESMOKE);
+        
+        //change color if mouse hovers over
         logout4.setOnMouseEntered(event -> {
             logout4.setFill(Color.CYAN);
         });
@@ -421,6 +461,7 @@ public class StudentRegistration extends Application {
         Pane mouseinvisible4 = new Pane(topBar4); 
         mouseinvisible4.setMouseTransparent(true);
         
+        //Background rectangles
         Rectangle rect10 = new Rectangle(50, 200, 1100, 570);
         rect10.setFill(Color.web("#0F4D92")); 
         
@@ -435,6 +476,7 @@ public class StudentRegistration extends Application {
         searchTitle.setStyle("-fx-font-weight:bold");
         searchTitle.setFill(Color.BLACK);
         
+        //Select button
         Button selectButton = new Button("Select");
         
         HBox button4 = new HBox(selectButton);
@@ -444,6 +486,9 @@ public class StudentRegistration extends Application {
         Pane mousevisible4 = new Pane(menuHBox4,loginHbox4); 
         Pane rootPane4 = new Pane(mouseinvisible4, mousevisible4, rect10, rect11, searchTitle, rect12, button4);
         Scene scene4 = new Scene(rootPane4, 1200, 800, Color.WHITESMOKE);
+        
+        //Change from scene to scene by clicking texts
+        // Changing from scene1 (Student Info)
         
         studentInfo.setOnMouseClicked(event -> {
             primaryStage.setScene(scene);
@@ -461,6 +506,8 @@ public class StudentRegistration extends Application {
             primaryStage.setScene(scene4);
         });
         
+        // Changing from scene2 (Enrolled Courses)
+        
         studentInfo2.setOnMouseClicked(event -> {
             primaryStage.setScene(scene);
         });
@@ -476,6 +523,8 @@ public class StudentRegistration extends Application {
         searchCourse2.setOnMouseClicked(event -> {
             primaryStage.setScene(scene4);
         });
+        
+        // Changing from scene3 (Selected Courses)
         
         studentInfo3.setOnMouseClicked(event -> {
             primaryStage.setScene(scene);
@@ -493,6 +542,7 @@ public class StudentRegistration extends Application {
             primaryStage.setScene(scene4);
         });
         
+        // Changing from scene4 (Search Courses)
         studentInfo4.setOnMouseClicked(event -> {
             primaryStage.setScene(scene);
         });
@@ -509,6 +559,7 @@ public class StudentRegistration extends Application {
             primaryStage.setScene(scene4);
         });
  
+        //Setup for scene1
         primaryStage.setTitle("Enrollment Subsystem");
         primaryStage.setScene(scene);
         primaryStage.show();
