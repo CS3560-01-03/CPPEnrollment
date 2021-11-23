@@ -15,11 +15,15 @@ import javafx.stage.Stage;
 
 public class StudentRegistration extends Application {
     Scene scene, scene2, scene3, scene4;
+    int toastMsgTime = 2000; //2.0 seconds
+    int fadeInTime = 500; //0.5 seconds
+    int fadeOutTime= 500; //0.5 seconds
+    String toastMsg = "some text...";
+    String student_id = "2";
+    String whatIWantFromView = "Course, `Course Title`, Time, Capacity, Waitlist, Room, Professor, Units, `Semester Year`";
+
     @Override
     public void start(Stage primaryStage) {
-        String student_id = "1";
-
-        String whatIWantFromView = "Course, `Course Title`, Time, Capacity, Waitlist, Room, Professor, Units, `Semester Year`";
         //Top Menu Bar
         Rectangle topBar = new Rectangle(0,0,1200,140);
         topBar.setFill(Color.web("#0F4D92"));
@@ -301,6 +305,8 @@ public class StudentRegistration extends Application {
                     student_id, course_id.toString());
             System.out.println( course_subject + course_code + "." + course_section + " Dropped.");
             enrolledCoursesScrollPane.setContent(enrolledCourses.connectTable("SELECT " + whatIWantFromView + " FROM enrolled_info WHERE studentID IN(?)", student_id));
+            toastMsg = course_subject + course_code + "." + course_section+ " Dropped.";
+            Toast.makeText(primaryStage, toastMsg, toastMsgTime, fadeInTime, fadeOutTime);
         });
 
 
@@ -435,6 +441,8 @@ public class StudentRegistration extends Application {
                     student_id, course_id.toString());
             System.out.println( course_subject + course_code + "." + course_section + " Removed.");
             selectedCoursesScrollPane.setContent(selectedCourses.connectTable("SELECT " + whatIWantFromView + " FROM (cart_info) WHERE studentID = ?", student_id));//"SELECT * FROM cart_info"
+            toastMsg = course_subject + course_code + "." + course_section+ " Removed.";
+            Toast.makeText(primaryStage, toastMsg, toastMsgTime, fadeInTime, fadeOutTime);
         });
 
         // Adds the course to courses_enrolled
@@ -453,6 +461,8 @@ public class StudentRegistration extends Application {
                     student_id, course_id.toString());
             System.out.println( course_subject + course_code + "." + course_section + " Enrolled and Removed.");
             selectedCoursesScrollPane.setContent(selectedCourses.connectTable("SELECT " + whatIWantFromView + " FROM (cart_info) WHERE studentID = ?", student_id));
+            toastMsg = course_subject + course_code + "." + course_section+ " Enrolled.";
+            Toast.makeText(primaryStage, toastMsg, toastMsgTime, fadeInTime, fadeOutTime);
         });
 
 
@@ -599,6 +609,8 @@ public class StudentRegistration extends Application {
                     "INSERT INTO cart VALUES (?, ?, ?)",
                     student_id, course_id.toString(), course_section);
             System.out.println(course_subject + course_code + "." + course_section+ " " + course_id);
+            toastMsg = course_subject + course_code + "." + course_section+ " Added to Selected Courses.";
+            Toast.makeText(primaryStage, toastMsg, toastMsgTime, fadeInTime, fadeOutTime);
         });
 
 
