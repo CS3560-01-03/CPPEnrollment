@@ -155,7 +155,7 @@ public class StudentRegistration extends Application {
 
 
 
-        // SCENE 2 = Selected Courses page
+        // SCENE 2 = Enrolledd Courses page
         // Top blue bar
         Rectangle topBar2 = new Rectangle(0,0,1200,140);
         topBar2.setFill(Color.web("#0F4D92"));
@@ -277,7 +277,7 @@ public class StudentRegistration extends Application {
         ScrollPane enrolledCoursesScrollPane = new ScrollPane();
 
         Controller enrolledCourses = new Controller();
-        TableView<Object> enrolled_table = enrolledCourses.connectTable("SELECT " + whatIWantFromView + " FROM (enrolled_info JOIN courses_enrolled) WHERE studentID = ?", student_id);//"SELECT * FROM enrolled_info WHERE studentID = ?", student_id
+        TableView<Object> enrolled_table = enrolledCourses.connectTable("SELECT " + whatIWantFromView + " FROM (enrolled_info) WHERE studentID = ?", student_id);//"SELECT * FROM enrolled_info WHERE studentID = ?", student_id
         enrolledCoursesScrollPane.setContent(enrolled_table);
         enrolledCoursesScrollPane.setTranslateX(69);
         enrolledCoursesScrollPane.setTranslateY(260);
@@ -300,12 +300,12 @@ public class StudentRegistration extends Application {
                     "DELETE FROM courses_enrolled WHERE (`studentID` = ?) and (`courseID` = ?)",
                     student_id, course_id.toString());
             System.out.println( course_subject + course_code + "." + course_section + " Dropped.");
-            enrolledCoursesScrollPane.setContent(enrolledCourses.connectTable("SELECT " + whatIWantFromView + " FROM enrolled_info JOIN courses_enrolled WHERE studentID IN(?)", student_id));
+            enrolledCoursesScrollPane.setContent(enrolledCourses.connectTable("SELECT " + whatIWantFromView + " FROM enrolled_info WHERE studentID IN(?)", student_id));
         });
 
 
 
-        // SCENE 3 = Enrolled Courses page
+        // SCENE 3 = Selected Courses page
         Rectangle topBar3 = new Rectangle(0,0,1200,140);
         topBar3.setFill(Color.web("#0F4D92"));
         topBar3.setMouseTransparent(true);
@@ -399,6 +399,8 @@ public class StudentRegistration extends Application {
         selectedTitle.setStyle("-fx-font-weight:bold");
         selectedTitle.setFill(Color.BLACK);
 
+        selectedTitle.setText("Selected Courses " + "(" + student_data_split[2].substring(0, student_data_split[2].length()-1) + " ID: " + student_data_split[0].substring(1) + ")");
+
         Button removeButton = new Button("REMOVE");
         Button enrollButton = new Button("ENROLL");
 
@@ -409,7 +411,7 @@ public class StudentRegistration extends Application {
         // CREATE NEW TABLE VIEW AND WHATEVER NEEDED TO SHOW A TABLE IN RIGHT LOCATION
         ScrollPane selectedCoursesScrollPane = new ScrollPane();
         Controller selectedCourses = new Controller();
-        TableView<Object> selected_table = selectedCourses.connectTable("SELECT " + whatIWantFromView + " FROM (cart_info JOIN cart) WHERE studentID = ?", student_id);
+        TableView<Object> selected_table = selectedCourses.connectTable("SELECT " + whatIWantFromView + " FROM (cart_info) WHERE studentID = ?", student_id);
 
         selectedCoursesScrollPane.setContent(selected_table);
         selectedCoursesScrollPane.setTranslateX(69);
@@ -432,7 +434,7 @@ public class StudentRegistration extends Application {
                     "DELETE FROM cart WHERE (`studentID` = ?) and (`courseID` = ?)",
                     student_id, course_id.toString());
             System.out.println( course_subject + course_code + "." + course_section + " Removed.");
-            selectedCoursesScrollPane.setContent(selectedCourses.connectTable("SELECT " + whatIWantFromView + " FROM (cart_info JOIN cart) WHERE studentID = ?", student_id));//"SELECT * FROM cart_info"
+            selectedCoursesScrollPane.setContent(selectedCourses.connectTable("SELECT " + whatIWantFromView + " FROM (cart_info) WHERE studentID = ?", student_id));//"SELECT * FROM cart_info"
         });
 
         // Adds the course to courses_enrolled
@@ -450,7 +452,7 @@ public class StudentRegistration extends Application {
                     "DELETE FROM cart WHERE (`studentID` = ?) and (`courseID` = ?)",
                     student_id, course_id.toString());
             System.out.println( course_subject + course_code + "." + course_section + " Enrolled and Removed.");
-            selectedCoursesScrollPane.setContent(selectedCourses.connectTable("SELECT " + whatIWantFromView + " FROM (cart_info JOIN cart) WHERE studentID = ?", student_id));
+            selectedCoursesScrollPane.setContent(selectedCourses.connectTable("SELECT " + whatIWantFromView + " FROM (cart_info) WHERE studentID = ?", student_id));
         });
 
 
@@ -596,7 +598,7 @@ public class StudentRegistration extends Application {
             coursesQuery.connectInsert(
                     "INSERT INTO cart VALUES (?, ?, ?)",
                     student_id, course_id.toString(), course_section);
-            //System.out.println(selected_course_data);*/
+            System.out.println(course_subject + course_code + "." + course_section+ " " + course_id);
         });
 
 
@@ -607,12 +609,12 @@ public class StudentRegistration extends Application {
         });
 
         enrolledCourse.setOnMouseClicked(event -> {
-            enrolledCoursesScrollPane.setContent(enrolledCourses.connectTable("SELECT " + whatIWantFromView + " FROM (enrolled_info JOIN courses_enrolled) WHERE studentID = ?", student_id));
+            enrolledCoursesScrollPane.setContent(enrolledCourses.connectTable("SELECT " + whatIWantFromView + " FROM (enrolled_info) WHERE studentID = ?", student_id));
             primaryStage.setScene(scene2);
         });
 
         selectedCourse.setOnMouseClicked(event -> {
-            selectedCoursesScrollPane.setContent(selectedCourses.connectTable("SELECT " + whatIWantFromView + " FROM (cart_info JOIN cart) WHERE studentID = ?", student_id));
+            selectedCoursesScrollPane.setContent(selectedCourses.connectTable("SELECT " + whatIWantFromView + " FROM (cart_info) WHERE studentID = ?", student_id));
             primaryStage.setScene(scene3);
         });
 
@@ -628,12 +630,12 @@ public class StudentRegistration extends Application {
         });
 
         enrolledCourse2.setOnMouseClicked(event -> {
-            enrolledCoursesScrollPane.setContent(enrolledCourses.connectTable("SELECT " + whatIWantFromView + " FROM (enrolled_info JOIN courses_enrolled) WHERE studentID = ?", student_id));
+            enrolledCoursesScrollPane.setContent(enrolledCourses.connectTable("SELECT " + whatIWantFromView + " FROM (enrolled_info) WHERE studentID = ?", student_id));
             primaryStage.setScene(scene2);
         });
 
         selectedCourse2.setOnMouseClicked(event -> {
-            selectedCoursesScrollPane.setContent(selectedCourses.connectTable("SELECT " + whatIWantFromView + " FROM (cart_info JOIN cart) WHERE studentID = ?", student_id));
+            selectedCoursesScrollPane.setContent(selectedCourses.connectTable("SELECT " + whatIWantFromView + " FROM (cart_info) WHERE studentID = ?", student_id));
             primaryStage.setScene(scene3);
         });
 
@@ -649,12 +651,12 @@ public class StudentRegistration extends Application {
         });
 
         enrolledCourse3.setOnMouseClicked(event -> {
-            enrolledCoursesScrollPane.setContent(enrolledCourses.connectTable("SELECT " + whatIWantFromView + " FROM (enrolled_info JOIN courses_enrolled) WHERE studentID = ?", student_id));//"SELECT * FROM enrolled_info"
+            enrolledCoursesScrollPane.setContent(enrolledCourses.connectTable("SELECT " + whatIWantFromView + " FROM (enrolled_info) WHERE studentID = ?", student_id));//"SELECT * FROM enrolled_info"
             primaryStage.setScene(scene2);
         });
 
         selectedCourse3.setOnMouseClicked(event -> {
-            selectedCoursesScrollPane.setContent(selectedCourses.connectTable("SELECT " + whatIWantFromView + " FROM (cart_info JOIN cart) WHERE studentID = ?", student_id));
+            selectedCoursesScrollPane.setContent(selectedCourses.connectTable("SELECT " + whatIWantFromView + " FROM (cart_info) WHERE studentID = ?", student_id));
             primaryStage.setScene(scene3);
         });
 
@@ -670,12 +672,12 @@ public class StudentRegistration extends Application {
         });
 
         enrolledCourse4.setOnMouseClicked(event -> {
-            enrolledCoursesScrollPane.setContent(enrolledCourses.connectTable("SELECT " + whatIWantFromView + " FROM (enrolled_info JOIN courses_enrolled) WHERE studentID = ?", student_id));
+            enrolledCoursesScrollPane.setContent(enrolledCourses.connectTable("SELECT " + whatIWantFromView + " FROM (enrolled_info) WHERE studentID = ?", student_id));
             primaryStage.setScene(scene2);
         });
 
         selectedCourse4.setOnMouseClicked(event -> {
-            selectedCoursesScrollPane.setContent(selectedCourses.connectTable("SELECT " + whatIWantFromView + " FROM (cart_info JOIN cart) WHERE studentID = ?", student_id));
+            selectedCoursesScrollPane.setContent(selectedCourses.connectTable("SELECT " + whatIWantFromView + " FROM (cart_info) WHERE studentID = ?", student_id));
             primaryStage.setScene(scene3);
         });
 
