@@ -14,22 +14,7 @@ import java.sql.*;
 public class Controller {
     @FXML
     private TableView<Object> tableview = new TableView<Object>();
-    @FXML
-    private TableColumn<ModelTable, String> col_course = new TableColumn<ModelTable,String>();
-    @FXML
-    private TableColumn<ModelTable, String> col_course_title = new TableColumn<ModelTable,String>();
-    @FXML
-    private TableColumn<ModelTable, String> col_units = new TableColumn<ModelTable,String>();
-    @FXML
-    private TableColumn<ModelTable, String> col_time = new TableColumn<ModelTable,String>();
-    @FXML
-    private TableColumn<ModelTable, String> col_waitlist = new TableColumn<ModelTable,String>();
-    @FXML
-    private TableColumn<ModelTable, String> col_capacity = new TableColumn<ModelTable,String>();
-    @FXML
-    private TableColumn<ModelTable, String> col_room = new TableColumn<ModelTable,String>();
-    @FXML
-    private TableColumn<ModelTable, String> col_professor = new TableColumn<ModelTable,String>();
+
 
     // Used for reading info AND putting it into a TableView (0 variables)
     public TableView<Object> connectTable(String query){
